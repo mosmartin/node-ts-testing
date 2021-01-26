@@ -7,4 +7,10 @@ describe("Utils test suite", () => {
     expect(parsedUrl.href).toBe("http://localhost:3000/login");
     expect(parsedUrl.port).toBe("3000");
   });
+
+  it("should throw an error on invalid urls", () => {
+    expect(() => {
+      Utils.parseUrl("");
+    }).toThrowError("Empty URL");
+  });
 });
